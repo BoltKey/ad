@@ -1,20 +1,23 @@
 function Player() {
-	this.x = 100;
-	this.y = canvas.height - 100;
-	this.w = 80;
-	this.speed = 0;
-	this.accel = 0.03
-	this.right = true;
-	this.brake = false;
-	this.color = "black";
-	score = 0;
+	this.init = function() {
+		this.x = 100;
+		this.y = canvas.height - 100;
+		this.w = 80;
+		this.speed = 0;
+		this.accel = 0.03;
+		this.right = true;
+		this.brake = false;
+		this.color = "black";
+		score = 0;
+		timer = 0;
+	}
 	this.direction = function(right) {
 		this.right = right;
 		this.brake = false;
 	}
 	this.stop = function() {
 		this.brake = true;
-		this.speed = 0;
+		//this.speed = 0;
 	}
 	this.draw = function() {
 		ctx.fillStyle = this.color;
@@ -33,13 +36,19 @@ function Player() {
 		}	
 	}
 	this.frame = function() {
-		if (replay) {
-			// auto direction be here
+		if (inReplay) {
+			var a = replay.getKey();
+			if (a) {
+				keyPress(a, true);
+			}
 		}
-		if (!this.brake) {
+		if (this.brake) { 
+			this.speed *= 0.9;
+		}
+		else {
 			this.speed += this.right * (this.accel * 2) - this.accel;
-			this.x += this.speed;
 		}
+		this.x += this.speed;
 		if (this.x > canvas.width)
 			this.x -= this.w + canvas.width;
         if (this.x < -this.w)
@@ -47,10 +56,22 @@ function Player() {
 		this.color = "black";
 		this.checkcols();
 		++score;
+		++timer;
+		
 	}
 	this.die = function() {
-		this.color = "orange";
+		/*this.color = "orange";
 		score = 0;
+		timer = 0;*/
+		if (!inReplay) {
+			replay.saveReplay(0);
+			if (localStorage.getItem("best") < score) {
+				localStorage.setItem("best", score);
+				replay.saveReplay("best");
+			}
+		}
+		restart();
+		
 	}
 	this.checkcols = function() {
 		for (var i = 0; i < enemies.squares.length; ++i) {
@@ -60,4 +81,5 @@ function Player() {
 			}
 		}
 	}
+	this.init();
 }

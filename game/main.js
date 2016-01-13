@@ -5,8 +5,9 @@ var lastmd;
 var mouseDown;
 var inplay = true;
 var score;
+var timer;
 var randomGen = true;
-var replay = false;
+var inReplay = false;
 
 function main() {
 	offset = $("#game").offset();
@@ -26,9 +27,23 @@ function main() {
 		document.body.onmouseup = function() { 
 			--mouseDown;
 	}
-	
+	replay = new ReplayManager();
+	restart();
+	mainloop();
+}
+
+function restart() {
 	player = new Player();
 	enemies = new Enemies();
-	
-	mainloop();
+	inReplay = false;
+	randomGen = true;
+	replay.wipe();
+}
+
+function startReplay(id) {
+	replay.loadReplay(id);
+	randomGen = false;
+	inReplay = true;
+	player = new Player();
+	enemies = new Enemies();
 }

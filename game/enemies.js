@@ -22,12 +22,17 @@ function Enemies() {
 	this.frame = function() {
 		if (randomGen) {
 			if (Math.random() < 0.01 + this.chanceModifier) {
-				this.squares.push(new this.red((Math.random() - (80 / canvas.width)) * (canvas.width + 80), -80));
+				var a = new this.red(Math.floor((Math.random() - (80 / canvas.width)) * (canvas.width + 80)), -80);
+				this.squares.push(a);
+				replay.currentReplay.squares.push({x: a.x, time: timer, type: "red"});
 				this.chanceModifier = 0;
 			}
 		}
 		else {
-			// here be gen from data
+			var a = replay.getSquare();
+			if (a) {
+				this.squares.push(new this.red(a.x, -80));
+			}
 		}
 		for (i = 0; i < this.squares.length; ++i) {
 			this.squares[i].frame();
