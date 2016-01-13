@@ -29,7 +29,6 @@ function Player() {
 			ctx.moveTo(this.x + this.w * (this.right ? 0.3 : 0.7), this.y + this.w * 0.25);
 			ctx.lineTo(this.x + this.w * (this.right ? 0.8 : 0.2), this.y + this.w * 0.5);
 			ctx.lineTo(this.x + this.w * (this.right ? 0.3 : 0.7), this.y + this.w * 0.75);
-			
 			ctx.fill();
 		}	
 	}

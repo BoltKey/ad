@@ -8,7 +8,7 @@ function Enemies() {
 	}
 	this.baseChance = 0.001;
 	this.chanceModifier = 0;
-	this.chanceChange = 0.0005;
+	this.chanceChange = function() {return Math.sqrt(score) * 0.00005};
 	this.red = this.square;
 	this.red.prototype = new this.square();
 	this.red.prototype.color = "red";
@@ -35,7 +35,7 @@ function Enemies() {
 				this.squares.splice(0, 1);
 			}
 		}
-		this.chanceModifier += this.chanceChange;
+		this.chanceModifier += this.chanceChange();
 	}
 	this.draw = function() {
 		for (i = 0; i < this.squares.length; ++i) {
