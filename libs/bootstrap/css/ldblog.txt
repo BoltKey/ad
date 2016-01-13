@@ -1,0 +1,107 @@
+So, I heard it is cool to write post-mortem.
+
+This was my first LD. I heard about it before and played some games created for it without even knowing they were created in 48 hours.
+
+I have to say it has been an awesome experience really. I wish I could thank you all individually for creating so great atmosphere here. Also, the voting system is genial.
+
+Ok, enough praising. Let's talk about my game.
+
+What went good: 
+- I came up with the concept quite fast and sticked to it until the end
+- I read some quides and stories by other LDers in advance, that's probably why the dialogue is there
+- I finally used git for my project
+- I got enough sleep, so my productivity didn't drop
+- The music. It was actually my first attempt at music making
+- I didn't visit facebook or similar throughout the weekend
+- I wasn't disturbed by anyone
+
+What went bad:
+- My eating schedule was messed up. I had one HUGE meal throughout the whole weekend
+- I wrote some terrible collision code at the start thinking I will have not to return to it ever again, but turned out I had to adjust it a lot of times. This actually caused some bugs with collisions
+- The difficulty. Let me talk a bit about this. So, I really like this kind of "skill" games, one example for all - Super Meat Boy (all bandages). Of course I want to make it fun for me, and I want the levels to be challenging. I create levels that are hard and nicely challenging for me, but combine some skill in the genre with designing levels which I know how to win, and you get impossible levels for other people. Which really sucks. You know, you spend most of the time on mechanics and features, and then you lose it all on level design. This exact thing happened with my earlier project, but I didn't learn for some reason. The worst part is that most of the interesting features are in the levels 90% of the players will never get to. It has a grow mechanic, but I think nobody reached that yet. I really hope I will finally learn and start making proper difficulty curve.
+- Too long levels perhaps? It is probably frustrating to have to go through the whole level if you die at the end
+
+Anyway, here is a chronological log which I wrote up during the weekend. 
+
+5 hours till start
+So, in preparation, I set up my repository, learned to work with Bosca Ceoil and sfxr for music and sounds, and I think I am ready. I can't wait for this to finally start.
+
+I had several ideas written up. I think I had an idea for about 10 themes. I lost them all because I forgot to save. Whatever.
+
+Anyway, I have a little neat concept that could - with some tweaks - fit most of the themes. Well, not most, but some.
+
+I really hope the theme will not end up being Growing. Like... what... would I do...
+
+Control the environment... same...
+
+I guess I will complain about theme anyway. I like isolation, stick together and strength in numbers the most. 
+
+I think I have everything set up, including food and beverage for the weekend. The best part is my parents are leaving the house for the weekend, so I will not have my workflow disrupted at all.
+
+I think I better get to bed so I can get up and dev all day and all night and all day and half the night. This... is gonna be awesome. I really hope I will keep this blog running and updated.
+
+Ok, I lied about the "go sleep" part. I set up the page, set up the canvas, made resize function and basic hello world. That is not considered making the game yet right?
+
+Man I am so excited.
+
+Ok, 4 hours remain. I will get hopefully 8 hours of sleep. See you, for real now.
+
+Almost 8 am now, 5 hours in. The themes are the two worst ones. Two button controls and growing. Darn.
+
+I at least have an idea about Two button controls. Acceleration game where you can accelerate into two directions and have to bounce off walls and shit.
+
+Time means hours and minutes since start. Add 3 hours to get local time.
+
+5:16 I got it going. I imported some input handlind from earlier projects and got menu up.
+
+5:39 Level displays properly, let's get into player physics.
+
+5:44 Player displays and can be moved like I wanted him to. Next step - wall collisions.
+
+6:28 Bouncing off wall finally works properly.
+
+6:45 Ok, bouncing works. I should probably make a spreadsheed with todo and ideas.
+
+7:18 Ok, now it works. For real now.
+
+8:48 I got working on some dialogues and story. I will have to think of something funny. I am in the phase, where the core is working and I don't know whether to add some features or leave them be.
+
+10:25 My workflow is starting to slow down. I have no idea what to do next.
+
+11:06 I just made music and generated some sound effects. Will implement them shortly.
+
+12:19 Third level, yay. Music is not as terrible as I was worrying. The loop sounds a bit odd.
+
+13:19 Ok, here comes the level designing. I have 2 tutorial levels and 1 real level. I think 2 tutorial is quite enough. I was thinking... maybe about 20 levels is just about right.
+
+15:37 I took a little break. I don't know what to do next once again. I even got the sounds done this time. Also, I said "screw menu".
+
+17:11 It works. I created quite a lot of dialogues to keep the players playing. Becuase the power of this game is in its later levels, and to get somewhere, I need something to hook people on. Getting close to half-time, and I am out of inspiration already. I added ice, which was probably a good idea. I need something else. Active powerups like for example instant stop is not an option with only 2 control keys. I was thinking maybe some speed upgrade, but that sounds a bit stupid.
+
+18:03 Gravity changers. They turned out to be pretty good actually. Made one level with them, and it is awesome.
+
+18:40 level 7 complete. I have a long night ahead of me if I really want 20 levels.
+
+19:08 I will add some grow mechanics. While you are on a grow tile, you get bigger, making it all harder. Once you get too big (48px), you just explode.
+
+20:39 I got the grow mechanic working. Now I need ideas for levels.
+
+24:11 Half time, here we go. I was expanding my music, then accidentally hit Esc and lost like 1 hour of work. Darn. The music sounds like shit, but I will keep it in anyway. I tried to make the "graphics" look less like 5-year-old-made by making the colors cooler, but it seems it started lagging. Darn. The levels keep going, but I need ideas.
+
+28:12 Night wasn't as productive as I hoped. I have 10 levels now, and made new music. I just am out of ideas for levels dammit. I have enough game elements for various combos, but I just don't know where things are stuck. I guess I will go get some sleep after 24 hours. I have like 10 hours of work available now, should be enough to finish this thing off.
+
+36:30 I have 13 levels, and I think that's enough. My play-through is about 30 minutes, so I suppose other people will have completion time somewhere around 1 hour. That's fine I guess.
+
+39:00 It is complete, but it NEEDS more levels. Some of the features are only merely introduced. I have 9 hours, I should be fine. But the rest is complete. And also feels complete. I haven't even met that rare bug in two runs, it is not even worth to be bothered by. Also, my second run with adjusted levels was 15 minutes.
+
+39:09 FUCK! It lags like hell in Firefox. Goddamn Firefox, I hate it even more that IE.
+
+39:56 Phew. Fixed it. Note: Firefox takes for EVER to change ctx.font. Several adjustments to this fixed it, as I was changing it like n times every frame. I can't evet upvote the random guy who saved me on stackexchange. 
+
+40:08 I just realized I haven't eaten in 24 hours. Weird I didn't even notice it. Well, I ate had a shitload of lentils the other day, so I guess that's why.
+
+41:33 I made 2 more levels. But I need AT LEAST one more to make it 15.
+
+44:17 I managed to hopefully fix one really bad bug with collisions. The size change fucked up everything. I added last very hard final level. It is done. DONE! The very last step is submission. Nothing goes wrong with that right? RIGHT?
+
+47:57 I browsed around Ludum Dare a bit. I added several little things, but my ftp is fucked up. Hope it works.
