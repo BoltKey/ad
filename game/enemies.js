@@ -9,7 +9,6 @@ function Enemies() {
 	this.baseChance = 0.001;
 	this.chanceModifier = 0;
 	this.chanceChange = function() {return Math.sqrt(score) * 0.00005};
-<<<<<<< HEAD
 	this.red = function(x, y){
 		ret = new enemies.square(x, y);;
 		ret.color = "red";
@@ -24,58 +23,52 @@ function Enemies() {
 	this.blue = function(x, y) {
 		ret = new enemies.square(x, y);
 		ret.color = "blue";
-		ret.accel = 0.08;
+		ret.accel = 0.03;
+		ret.trackCoef = 0.0003;
 		ret.frame = function() {
 			this.speed[1] += this.accel;
+			var c = (canvas.width + 80) / 2;
+			this.speed[0] += ((player.x - this.x + 3 * c) % (c * 2) - c) * this.trackCoef;  // black magic
 			this.y += this.speed[1];
 			this.x += this.speed[0];
+			if (this.x > canvas.width)
+				this.x -= this.w + canvas.width;
+			if (this.x < -this.w)
+				this.x += canvas.width + this.w;
 		}
 		return ret;
-=======
-	this.red = this.square;
-	this.red.prototype = new this.square();
-	this.red.prototype.color = "red";
-	this.red.prototype.accel = 0.03;
-	this.red.prototype.frame = function() {
-		this.speed[1] += this.accel;
-		this.y += this.speed[1];
-		this.x += this.speed[0];
->>>>>>> 1394d52197f2ff875998405c44465bb52c79bfbf
 	}
 	
 	this.frame = function() {
 		if (randomGen) {
 			if (Math.random() < 0.01 + this.chanceModifier) {
-<<<<<<< HEAD
 				var args = [Math.floor((Math.random() - (80 / canvas.width)) * (canvas.width + 80)), -80];
 				var a;
-				if (Math.random() > 0.2)
+				var t;
+				if (Math.random() > 0.2) {
 					a = new this.red(...args);
-				else 
+					t = "red"
+				}
+				else {
 					a = new this.blue(...args);
+					t = "blue";
+				}
 				//var a = new this.red(...args);//(Math.random() < 0.2 ? new this.red(...args) : new this.blue(...args));
-=======
-				var a = new this.red(Math.floor((Math.random() - (80 / canvas.width)) * (canvas.width + 80)), -80);
->>>>>>> 1394d52197f2ff875998405c44465bb52c79bfbf
 				this.squares.push(a);
-				replay.currentReplay.squares.push({x: a.x, time: timer, type: "red"});
+				replay.currentReplay.squares.push({x: a.x, time: timer, type: t});
 				this.chanceModifier = 0;
 			}
 		}
 		else {
 			var a = replay.getSquare();
 			if (a) {
-				this.squares.push(new this.red(a.x, -80));
+				this.squares.push(new this[a.type](a.x, -80));
 			}
 		}
 		for (i = 0; i < this.squares.length; ++i) {
 			this.squares[i].frame();
 			if (this.squares[i].y > canvas.height) {
-<<<<<<< HEAD
 				this.squares.splice(i, 1);
-=======
-				this.squares.splice(0, 1);
->>>>>>> 1394d52197f2ff875998405c44465bb52c79bfbf
 			}
 		}
 		this.chanceModifier += this.chanceChange();
