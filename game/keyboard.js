@@ -47,6 +47,8 @@ function keyPress(k, sim) {
 		case 66:
 			startReplay("best");
 			break;
+		case 27:
+			escBack();
 	}
 }
 function keyHold(k) {

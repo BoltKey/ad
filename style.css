@@ -1,0 +1,17 @@
+/* generated with danielstern.ca/range.css */
+body {
+	font-family: "arial";
+	
+}
+body:hover {
+	cursor: Default;
+}
+::-moz-selection { /* firefox new ie? lol */
+    color: none;
+    background: none;
+}
+
+::selection {
+    color: none;
+    background: none;
+}

@@ -4,11 +4,15 @@ var fpshistory = [];
 var interval = 1000/fps;
 
 function mainloop() {
+	//while (Date.now() - then < interval) {};  // because FUCK YOUR CPU
 	requestAnimationFrame(mainloop);
 	now = Date.now();
 	delta = now - then;
-	if (delta > interval) {
+	then = Date.now();
+	
+	//if (delta > interval) {
 		// fps calculation
+		
 		fpshistory.push(1000/delta);
 		if (fpshistory.length > 20) {
 			fpshistory.shift();
@@ -29,11 +33,11 @@ function mainloop() {
 		}
 		checkkeys();
 		if (inplay) {
-			player.frame();
-			enemies.frame();
+			player.frame(1);
+			enemies.frame(1);
 		}
 		lastmd = mouseDown;
 		lastkd = JSON.parse(JSON.stringify(keysDown));
 		draw();
-	}
+	//}
 }

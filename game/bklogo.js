@@ -1,3 +1,4 @@
+var canvas;
 function BKLogo(callback) {
 	//canvas
 	canvas = $("#game")[0];
